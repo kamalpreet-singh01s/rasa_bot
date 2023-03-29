@@ -1,0 +1,56 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_greet
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: info path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: grn_query
+    entities:
+      - grn_no: "grn/000012"
+  - action: utter_grn_query
+  - intent: mood_greet
+  - action: utter_happy
+
+- story: info path 2
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: purchase_query
+    - action: utter_purchase_query
+    - intent: mood_greet
+    - action: utter_happy
+    - intent: status_query
+    - action: utter_status_query
+    - intent: site_query
+    - action: utter_site_query
+    - intent: vendor_query
+    - action: utter_vendor_query

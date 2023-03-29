@@ -1,0 +1,33 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: send me all detail of purchase order po/51254.
+  steps:
+    - intent: purchase_query
+    - action: utter_purchase_query
+
+- rule: Get all site from vendor.
+  steps:
+    - intent: site_query
+    - action: utter_site_query
+
+- rule: get all grn of po/11646.
+  steps:
+    - intent: grn_query
+    - action: utter_grn_query
+
+- rule: who is the vendor of grn/000470
+  steps:
+    - intent: vendor_query
+    - action: utter_vendor_query

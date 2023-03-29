@@ -1,0 +1,152 @@
+version: "3.1"
+
+nlu:
+- regex: purchase_order
+  examples: |
+    - ^(PO|po)\/[0-9]{5}$
+- regex: grn_no
+  examples: |
+    - ^(grn|GRN|Grn|gRn|GRn|gRN)\/[0-9]{6}$
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - never mind
+    - nevermind
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremely sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: grn_query
+  examples: |
+    - Get me my status of [grn/000033](grn_no).
+    - Show all in my [grn/000011](grn_no).
+    - [grn/000048](grn_no).
+    - get all detail of [grn/000323](grn_no).
+    - get all grn whose [approved](status_code).
+    - Send me all [pending](status_code) grn.
+    - I want all grn whose purchase order is [PO/65413](purchase_order).
+    - what is the grn of purchase order [PO/54456](purchase_order).
+
+- intent: purchase_query
+  examples: |
+    - get me Purchase order of all approved grn.
+    - I want to get purchase order whose status is [closed](status_code).
+    - Get me all purchase order whose status is [rejected](status_code).
+    - show all the report of purchase order [PO/00003](purchase_order).
+    - [PO/12458](purchase_order)
+    - send me details about purchase order [PO/12514](purchase_order).
+    - give me all the purchase order of [grn](grn_query).
+    - all purchase order of all vendor.
+
+- intent: site_query
+  examples: |
+    - Which site is [pending](status_code).
+    - Site name where pincode is 141008.
+    - which site is [open](status_code).
+    - Send me all site which is [rejected](status_code).
+    - send me site of grn/004455
+    - get me site name whose purchase order is [po/01454](purchase_order).
+    - all site of vendor in ludhiana.
+    - what is the site of [grn/000035](grn_query).
+    - What is the site of [grn/000540](grn_query).
+
+- intent: vendor_query
+  examples: |
+    - What is the vendor name whose belongs to [PO/54356](purchase_order).
+    - vendor who is situated in gil road.
+    - vendor whose grn is [grn/088989](grn_no).
+    - I want to know about vendor whose new.
+    - What is vendor name whose purchase order is [po/45646](purchase_order).
+    - send me all the vendors who is in the list.
+    - What is vendor name which supply us material.
+
+- intent: purchase_date
+  examples: |
+    - Get me purchase date for [PO/65454](purchase_order).
+    - What is the purchase date for [grn/000124](grn_no).
+    - What is purchase date for all rejected grn.
+    - Get me purchase date of all vendor.
+    - send me purchase date of [po/51512](purchase_order).

@@ -1,0 +1,62 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_greet
+  - mood_unhappy
+  - bot_challenge
+  - grn_query
+  - purchase_query
+  - status_query
+  - site_query
+  - vendor_query
+  - purchase_date
+
+entities:
+
+  - grn_no
+  - purchase_order
+  - status_code
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_grn_query:
+  - text: "Here is the grn details you can check."
+
+  utter_purchase_query:
+  - text: "Here is the purchase order for your query."
+
+  utter_status_query:
+  - text: "Here is the status code for your query."
+
+  utter_site_query:
+  - text: "Here is the site info that you asked."
+
+  utter_vendor_query:
+  - text: "Here is the detail for vendor."
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
