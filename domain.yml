@@ -15,11 +15,15 @@ intents:
   - vendor_query
   - purchase_date
 
+
 entities:
 
   - grn_no
   - purchase_order
   - status_code
+  - vendor_name
+  - voucher_name
+  - site_name
 
 responses:
   utter_greet:

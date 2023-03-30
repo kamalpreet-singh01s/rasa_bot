@@ -1,3 +1,4 @@
 .rasa/*
 venv/*
 __pycache__
+/models/*
