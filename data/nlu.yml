@@ -111,6 +111,8 @@ nlu:
     - what is the grn of purchase order [PO/54456](purchase_order).
     - What is the grn for [PAY/00011](voucher_name).
     - Get all grn which [V-65454](vendor_name) is created.
+    - show all the grn whose [GRNPAY](voucher_name).
+    
 
 - intent: purchase_query
   examples: |
@@ -124,7 +126,10 @@ nlu:
     - all purchase order of all vendor.
     - What is the purchase order for [GRNPAY/00001](voucher_name).
     - Show all purchase order of [V-45845](vendor_name).
-    -     
+    - what is the purchase order of [PO/12345](purchase_order).
+    - fetch all the purchase order for [PAY/65454](voucher_name).
+    - What is the purchase order for [grn/000042](grn_no).
+    - get all order for [grn/000032](grn_no).
 
 - intent: site_query
   examples: |
@@ -140,7 +145,8 @@ nlu:
     - Which site is released [PAY/00001](voucher_name).
     - Tell me site for [V-5124](vendor_name).
     - what is the site of [grn/312121](grn_no) whose [po/35145](purchase_order) or [PAY/1110](voucher_name) having [V-36251](vendor_name).
-    
+    - fetch all sites for vendor [v-54445](vendor_name)
+    - get all the site of  [P-01](site_name).
 
 - intent: vendor_query
   examples: |
@@ -150,7 +156,9 @@ nlu:
     - I want to know about vendor whose new.
     - What is vendor name whose purchase order is [po/45646](purchase_order).
     - send me all the vendors who is in the list.
+    - fetch all the vendor of site [v-545](vendor_name) 
     - What is vendor name which supply us material.
+    - What is the vendor name of [V-654](site_name).
     - What is the vendor name of [GRNPAY/04467](voucher_name).
     - what is the vendor name whose code is [V-0087](vendor_name).
 
@@ -162,4 +170,10 @@ nlu:
     - Get me purchase date of all vendor.
     - send me purchase date of [po/51512](purchase_order).
     - send me purchase date for [GRNPAY/00007](voucher_name).
-    - What is the purchase order for [V-0048](vendor_name).
+    - What is the purchase date for [V-0048](vendor_name).
+    - Get all purchase date for [pay/45544](vendor_name).
+    - Show me all the purchase date of [W-561](site_name).
+    - fetch all the purchase date for [w-001](site_name).
+    - view me purchase date for [01S-65](site_name).
+    - I want to fetch date for [W-Test1](site_name).
+    - filterout all purchase date for [W-281A](site_name).
