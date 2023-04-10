@@ -78,63 +78,64 @@
 </svg>
 <script>
 
-  function serveGraph() {
-    let oldInputGraphValue;
+    function serveGraph() {
+        let oldInputGraphValue;
 
-    const url = 'visualization.dot';
-    const refreshInterval = 500;
+        const url = 'visualization.dot';
+        const refreshInterval = 500;
 
-    // trigger a refresh by fetching an updated graph
-    setInterval(function () {
-      fetch(url).then(r => r.text()).then(dot => {
-        document.getElementById('errormsg').innerHTML = '';
-        if (oldInputGraphValue === dot) return;
+        // trigger a refresh by fetching an updated graph
+        setInterval(function () {
+            fetch(url).then(r => r.text()).then(dot => {
+                document.getElementById('errormsg').innerHTML = '';
+                if (oldInputGraphValue === dot) return;
 
-        oldInputGraphValue = dot;
-        drawGraph(dot);
-      }).catch(err => {
-        document.getElementById('errormsg').innerHTML =
-          'Failed to update plot. (' + err.message + ')';
-      });
-    }, refreshInterval);
-  }
-
-  function drawGraph(graph) {
-    let g = graphlibDot.read(graph);
-    // Set margins, if not present
-    if (!g.graph().hasOwnProperty("marginx") &&
-      !g.graph().hasOwnProperty("marginy")) {
-      g.graph().marginx = 20;
-      g.graph().marginy = 20;
+                oldInputGraphValue = dot;
+                drawGraph(dot);
+            }).catch(err => {
+                document.getElementById('errormsg').innerHTML =
+                    'Failed to update plot. (' + err.message + ')';
+            });
+        }, refreshInterval);
     }
-    g.graph().transition = function (selection) {
-      return selection.transition().duration(300);
-    };
-    // Render the graph into svg g
-    d3.select("svg g").call(render, g);
-  }
-  // Set up zoom support
-  const svg = d3.select("svg"),
-    inner = d3.select("svg g"),
-    zoom = d3.zoom().on("zoom", function () {
-      inner.attr("transform", d3.event.transform);
-    });
-  svg.call(zoom);
 
-  // Create and configure the renderer
-  const render = dagreD3.render();
+    function drawGraph(graph) {
+        let g = graphlibDot.read(graph);
+        // Set margins, if not present
+        if (!g.graph().hasOwnProperty("marginx") &&
+            !g.graph().hasOwnProperty("marginy")) {
+            g.graph().marginx = 20;
+            g.graph().marginy = 20;
+        }
+        g.graph().transition = function (selection) {
+            return selection.transition().duration(300);
+        };
+        // Render the graph into svg g
+        d3.select("svg g").call(render, g);
+    }
 
-  let isClient = false;
-  isClient = true;
+    // Set up zoom support
+    const svg = d3.select("svg"),
+        inner = d3.select("svg g"),
+        zoom = d3.zoom().on("zoom", function () {
+            inner.attr("transform", d3.event.transform);
+        });
+    svg.call(zoom);
 
-  if (isClient) {
-    // Mark all nodes and their edges as active
-    cssRules = document.getElementById('graph-style').sheet.cssRules;
-    cssRules[3].style.opacity = 1;
-    cssRules[4].style.opacity = 1;
+    // Create and configure the renderer
+    const render = dagreD3.render();
 
-    let graph;
-    graph = `digraph  {
+    let isClient = false;
+    isClient = true;
+
+    if (isClient) {
+        // Mark all nodes and their edges as active
+        cssRules = document.getElementById('graph-style').sheet.cssRules;
+        cssRules[3].style.opacity = 1;
+        cssRules[4].style.opacity = 1;
+
+        let graph;
+        graph = `digraph  {
 0 [class="start active", fillcolor=green, fontsize=12, label=START, style=filled];
 "-1" [class=end, fillcolor=red, fontsize=12, label=END, style=filled];
 1 [class="", fontsize=12, label=utter_greet];
@@ -186,10 +187,10 @@
 31 -> 20  [class="", key=0];
 }
 `;
-    drawGraph(graph);
-  } else {
-    serveGraph();
-  }
+        drawGraph(graph);
+    } else {
+        serveGraph();
+    }
 
 
 </script>
