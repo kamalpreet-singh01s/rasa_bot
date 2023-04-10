@@ -31,3 +31,13 @@ rules:
   steps:
     - intent: vendor_query
     - action: utter_vendor_query
+
+- rule: what is the status of po/56454
+  steps:
+    - intent: status_query
+    - action: utter_status_query
+
+- rule: Nevermind
+  steps:
+    - intent: deny
+    - action: utter_deny
