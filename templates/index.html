@@ -1,15 +1,19 @@
 <!DOCTYPE>
 <html lang="en">
 <head>
-    <title>CHATBOT</title>
+    <title>RASA CHATBOT</title>
 </head>
 <body>
-<h1>CHATBOT</h1>
-<form>
-    <label for="text">You:</label><br/>
-    <input type="text" id="text" name="text"/><br/>
-    <br/>
-    {{val}}
-</form>
+<div style="align-items: center; margin-left: 20px; width: 500px ">
+    <h2>RASA CHATBOT</h2>
+    <form method="post">
+        <label for="text">You : </label>
+        <input type="text" id="text" name="text"/>
+        <input type="submit" value="Send">
+    </form>
+    {% if val %}
+        Bot : {{ val }}
+    {% endif %}
+</div>
 </body>
 </html>
