@@ -14,6 +14,8 @@ intents:
   - site_query
   - vendor_query
   - purchase_date
+  - voucher_query
+  - qrn_query
 
 
 entities:
@@ -26,6 +28,8 @@ entities:
   - site_name
   - requisition_name
   - material_category
+  - voucher_reference
+  - status
 
 responses:
   utter_greet:
