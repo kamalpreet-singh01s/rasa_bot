@@ -13,23 +13,20 @@ intents:
   - status_query
   - site_query
   - vendor_query
-  - purchase_date
   - voucher_query
-  - qrn_query
+  - rqn_query
+  - purchase_date
 
 
 entities:
-
-  - grn_no
-  - purchase_order
-  - status_code
-  - vendor_name
-  - voucher_name
-  - site_name
-  - requisition_name
-  - material_category
-  - voucher_reference
+  - grn_reference
+  - po_reference
   - status
+  - vendor_code
+  - voucher_reference
+  - site_code
+  - rqn_reference
+  - material_reference
 
 responses:
   utter_greet:
