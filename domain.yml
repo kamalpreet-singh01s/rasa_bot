@@ -5,32 +5,38 @@ intents:
   - goodbye
   - affirm
   - deny
-  - mood_greet
+  - mood_great
   - mood_unhappy
   - bot_challenge
+  - rqn_query
   - grn_query
   - purchase_query
+  - voucher_query
   - status_query
   - site_query
   - vendor_query
-  - voucher_query
-  - rqn_query
   - purchase_date
 
 
 entities:
+  - rqn_reference
   - grn_reference
   - po_reference
+  - voucher_reference
+  - material_reference
   - status
   - vendor_code
-  - voucher_reference
   - site_code
-  - rqn_reference
-  - material_reference
 
 responses:
+  utter_default:
+    - text: "Sorry, I didn't get that, can you rephrase?"
+
   utter_greet:
     - text: "Hey! How are you?"
+
+  utter_mood_great:
+    - text: "Okay, what can i do for you?"
 
   utter_cheer_up:
     - text: "Here is something to cheer you up:"
@@ -51,11 +57,20 @@ responses:
   utter_deny:
     - text: "Please try again!"
 
+  utter_youarewelcome:
+    - text: "You're very welcome."
+
+  utter_rqn_query:
+    - text: "Here is the material requisition details you can check."
+
   utter_grn_query:
     - text: "Here is the grn details you can check."
 
   utter_purchase_query:
     - text: "Here is the purchase order for your query."
+
+  utter_voucher_query:
+    - text: "Here is the payment voucher for your query."
 
   utter_purchase_date:
     - text: "Here is the purchase date for your query. Thank You!!"
@@ -68,7 +83,6 @@ responses:
 
   utter_vendor_query:
     - text: "Here is the detail for vendor."
-
 
 session_config:
   session_expiration_time: 60

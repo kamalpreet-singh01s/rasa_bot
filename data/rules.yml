@@ -12,7 +12,7 @@ rules:
       - intent: bot_challenge
       - action: utter_iamabot
 
-  - rule: send me all detail of purchase order po/51254.
+  - rule: send me all details of purchase order po/51254.
     steps:
       - intent: purchase_query
       - action: utter_purchase_query

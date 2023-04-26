@@ -68,6 +68,7 @@ nlu:
       - wonderful
       - I am feeling very good
       - I am great
+      - I am fine
       - I am amazing
       - I am going to save the world
       - super stoked
@@ -245,6 +246,10 @@ nlu:
       - show all the payment voucher who is [paid](status).
       - what all are pv whose status is [draft](status).
       - get all the payment voucher is [cancelled](status).
+      - show me the list of [cancelled](status) payment vouchers.
+      - show me the list of [cancelled](status) vouchers.
+      - show me the list of [cancelled](status) pv
+      .
       - get all v_q of [v-4016](vendor_code).
       - What is the voucher of [PAY/54517](voucher_reference) and [TMT 10MM](material_reference).
       - what is pay_voucher of [v-4512](vendor_code) and the [draft](status).

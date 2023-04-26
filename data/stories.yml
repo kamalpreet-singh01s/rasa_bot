@@ -1,12 +1,11 @@
 version: "3.1"
 
 stories:
-
   - story: happy path
     steps:
       - intent: greet
       - action: utter_greet
-      - intent: mood_greet
+      - intent: mood_great
       - action: utter_happy
 
   - story: sad path 1
@@ -33,25 +32,73 @@ stories:
     steps:
       - intent: greet
       - action: utter_greet
-      - intent: grn_query
+      - intent: rqn_query
         entities:
-          - grn_reference
-      - action: utter_grn_query
-      - intent: mood_greet
+          - rqn_reference
+      - action: utter_rqn_query
+      - intent: mood_great
       - action: utter_happy
+      - intent: status_query
+      - action: utter_status_query
+      - intent: site_query
+        entities:
+          - site_code
+      - action: utter_site_query
+
+  - story: info path 1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: purchase_query
+        entities:
+          - po_reference
+      - action: utter_purchase_query
+      - intent: mood_great
+      - action: utter_happy
+      - intent: status_query
+      - action: utter_status_query
+      - intent: site_query
+        entities:
+          - site_code
+      - action: utter_site_query
+      - intent: vendor_query
+        entities:
+          - vendor_code
+      - action: utter_vendor_query
 
   - story: info path 2
     steps:
       - intent: greet
       - action: utter_greet
-      - intent: purchase_query
-      - action: utter_purchase_query
-      - intent: mood_greet
+      - intent: grn_query
+        entities:
+          - grn_reference
+      - action: utter_grn_query
+      - intent: mood_great
       - action: utter_happy
       - intent: status_query
       - action: utter_status_query
       - intent: site_query
+        entities:
+          - site_code
       - action: utter_site_query
+      - intent: vendor_query
+        entities:
+          - vendor_code
+      - action: utter_vendor_query
+
+  - story: info path 3
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: voucher_query
+        entities:
+          - voucher_reference
+      - action: utter_voucher_query
+      - intent: mood_great
+      - action: utter_happy
+      - intent: status_query
+      - action: utter_status_query
       - intent: vendor_query
         entities:
           - vendor_code
