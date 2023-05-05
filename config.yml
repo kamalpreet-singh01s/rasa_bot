@@ -35,4 +35,4 @@ policies: null
 #     max_history: 5
 #     epochs: 100
 #     constrain_similarities: true
-assistant_id: 20230410-175148-raw-bazaar
+assistant_id: 20230503-113151-callous-draft
